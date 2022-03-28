@@ -1,0 +1,42 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.gallery img {
+  width: 400px;
+  height: 450px;
+  margin: 2rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.pagebtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.next {
+  background-color: aqua;
+}
+
+.prev {
+  background-color: aquamarine;
+}
