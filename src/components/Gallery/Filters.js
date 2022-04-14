@@ -24,7 +24,7 @@ const Filters = ({ setOrder, setOrient }) => {
           id='orient'
           onChange={(e) => setOrient(e.target.value)}
         >
-          <option value='portrait'>landscape</option>
+          <option value='landscape'>landscape</option>
           <option value='portrait'>portrait</option>
           <option value='squarish'>squarish</option>
         </select>

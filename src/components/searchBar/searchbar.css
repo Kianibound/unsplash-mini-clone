@@ -10,9 +10,9 @@
     rgba(133, 139, 255, 1) 19%,
     rgba(127, 255, 240, 1) 67%
   );
-  box-shadow: 1px 1px 6px 0px rgba(175, 255, 238, 0.75);
-  -webkit-box-shadow: 1px 1px 6px 0px rgba(175, 255, 238, 0.75);
-  -moz-box-shadow: 1px 1px 6px 0px rgba(175, 255, 238, 0.75);
+  box-shadow: 2px 2px 5px 0px rgba(161, 161, 161, 0.75);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(161, 161, 161, 0.75);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(161, 161, 161, 0.75);
   border-radius: 0 0 60% 30%;
 }
 
@@ -30,6 +30,7 @@
   border: none;
   outline: none;
   background-color: rgb(243, 243, 243);
+  font-size: ;
 }
 
 .searchBtn {
@@ -44,4 +45,12 @@
   box-shadow: 1px 1px 6px 0px rgba(255, 101, 101, 0.75);
   -webkit-box-shadow: 1px 1px 6px 0px rgba(255, 101, 101, 0.75);
   -moz-box-shadow: 1px 1px 6px 0px rgba(255, 101, 101, 0.75);
+  transition: all 0.3s ease-in-out;
+}
+
+.searchBtn:hover {
+  background-color: rgb(255, 156, 156);
+  box-shadow: 1px 1px 6px 0px rgb(255, 156, 156);
+  -webkit-box-shadow: 1px 1px 6px 0px rgb(255, 156, 156);
+  -moz-box-shadow: 1px 1px 6px 0px rgb(255, 156, 156);
 }

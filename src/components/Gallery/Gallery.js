@@ -1,7 +1,16 @@
 import './gallery.css'
 import Filters from './Filters'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import ModalComp from './modal/ModalComp'
 
-const Gallery = ({ imageListSearched, setPage, page, setOrder, setOrient }) => {
+const Gallery = ({
+  imageListSearched,
+  setPage,
+  page,
+  setOrder,
+  setOrient,
+  setIsLoading,
+}) => {
   const handleNext = () => {
     setPage(page + 1)
   }
@@ -9,17 +18,34 @@ const Gallery = ({ imageListSearched, setPage, page, setOrder, setOrient }) => {
   const handlePrev = () => {
     setPage(page - 1)
   }
+
+  const handleOpenImageDetails = (image) => {
+    console.log(image)
+  }
   return (
     <>
       <Filters setOrder={setOrder} setOrient={setOrient} />
       {imageListSearched && (
         <div className='gallery'>
           {imageListSearched.map((image) => (
-            <img
-              key={image.id}
-              src={image.urls.regular}
-              alt={image.alt_decription}
-            />
+            <div className='imageContainer'>
+              {imageListSearched.length > 0 && (
+                <img
+                  key={image?.id}
+                  src={image?.urls.small}
+                  alt={image?.alt_decription}
+                  onClick={handleOpenImageDetails}
+                  onLoad={() => setIsLoading(false)}
+                />
+              )}
+              <div className='imageData'>
+                <span>
+                  {image.likes} <FavoriteIcon className='icon' />
+                </span>
+                <span>By: {image.user.username}</span>
+                <ModalComp image={image} />
+              </div>
+            </div>
           ))}
         </div>
       )}

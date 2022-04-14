@@ -1,0 +1,20 @@
+.home {
+  width: 100%;
+  height: auto;
+  border: 1px solid blue;
+  background-color: rgb(230, 230, 230);
+}
+.loading {
+  font-size: 4rem;
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+}
+.skeletonWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
