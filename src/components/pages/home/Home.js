@@ -34,8 +34,6 @@ const Home = () => {
     }, 3000)
   }, [searchValue, page, order, orient, isLoading])
 
-  console.log(imageListSearched)
-
   return (
     <div className='home'>
       {' '}
@@ -46,8 +44,8 @@ const Home = () => {
       />
       {isLoading ? (
         <div className='skeletonWrapper'>
-          {array.map((item) => (
-            <Skeleton />
+          {array.map((item, index) => (
+            <Skeleton key={index} />
           ))}
         </div>
       ) : (

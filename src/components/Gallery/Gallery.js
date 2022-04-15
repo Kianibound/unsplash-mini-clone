@@ -19,30 +19,26 @@ const Gallery = ({
     setPage(page - 1)
   }
 
-  const handleOpenImageDetails = (image) => {
-    console.log(image)
-  }
   return (
     <>
       <Filters setOrder={setOrder} setOrient={setOrient} />
       {imageListSearched && (
         <div className='gallery'>
           {imageListSearched.map((image) => (
-            <div className='imageContainer'>
+            <div className='imageContainer' key={image.id}>
               {imageListSearched.length > 0 && (
                 <img
                   key={image?.id}
                   src={image?.urls.small}
                   alt={image?.alt_decription}
-                  onClick={handleOpenImageDetails}
                   onLoad={() => setIsLoading(false)}
                 />
               )}
               <div className='imageData'>
                 <span>
-                  {image.likes} <FavoriteIcon className='icon' />
+                  <FavoriteIcon className='icon' /> {image.likes}
                 </span>
-                <span>By: {image.user.username}</span>
+                <span>By: {image.user.name}</span>
                 <ModalComp image={image} />
               </div>
             </div>

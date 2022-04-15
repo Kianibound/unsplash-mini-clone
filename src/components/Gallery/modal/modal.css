@@ -1,0 +1,45 @@
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.downloadBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+.downloadLink {
+  background-color: rgb(24, 255, 24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(19, 194, 0);
+  cursor: pointer;
+  color: rgb(5, 98, 0);
+  font-weight: bold;
+}
+.downloadLink.full {
+  border-radius: 10px 0 0 10px;
+}
+.downloadLink.raw {
+  border-radius: 0 10px 10px 0;
+}
+
+.downloadBtns a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.DLicon {
+  color: green;
+  margin-right: 10px;
+}
+
+.downloadBTns a:hover {
+}

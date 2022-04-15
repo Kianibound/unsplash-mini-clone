@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import './modal.css'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+
 import Modal from '@mui/material/Modal'
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline'
 
 const style = {
   position: 'absolute',
@@ -21,6 +22,7 @@ const ModalComp = ({ image }) => {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+
   return (
     <div className='modal'>
       <Button onClick={handleOpen} variant='contained' color='success'>
@@ -33,8 +35,27 @@ const ModalComp = ({ image }) => {
         aria-describedby='modal-modal-description'
       >
         <Box sx={style}>
-          <h1>Modal is Open</h1>
-          <h2>User: {image.user.username}</h2>
+          <div className='modalContainer'>
+            <img src={image.urls.small} alt={image.alt_decription} />
+            <div className='downloadBtns'>
+              <DownloadForOfflineIcon className='DLicon' fontSize='large' />
+              <div className='downloadLink full'>
+                <a href={image.urls.full} download target='_blank'>
+                  Full
+                </a>
+              </div>
+              <div className='downloadLink'>
+                <a href={image.urls.regular} download target='_blank'>
+                  Regular
+                </a>
+              </div>
+              <div className='downloadLink raw'>
+                <a href={`${image.urls.raw}`} download target='_blank'>
+                  Raw
+                </a>
+              </div>
+            </div>
+          </div>
         </Box>
       </Modal>
     </div>
